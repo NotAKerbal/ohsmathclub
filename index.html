@@ -9,29 +9,45 @@
             body{
                 font-family: 'Roboto', sans-serif;
             }
-            nav, a {
+            a {
                 background-color:blue;
                 padding: 10px;
                 border-radius: 10px;
                 color:yellow;
                 text-decoration: none;
                 border-color:yellow;
+                transition: all 1s;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
             }
             
             h1{
-                padding: 0px;
+                background-color:blue;
+                padding: 10px;
+                border-radius: 10px;
+                color:yellow;
+                text-decoration: none;
+                padding: 10px;
                 margin: 0px;
                 text-align: center;
                 width:100%;
-                transition-property: width;
                 transition-duration: 2s;
+                height: 100%;
             }
             a:hover {
                 background-color: yellow;
                 color: blue;
+                transition-duration: 100ms;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
             }
             .small {
                 width: 180px;
+                transition-delay: 0s;
+            }
+            .flex {
+                opacity: 0%;
+                position: absolute;
             }
         </style>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -39,28 +55,29 @@
         <script>
             function loadContent(path){
                 document.getElementById('content').src = path;
-                if(path != "/home"){
+                if(path != "home"){
                     document.getElementById('homeIcon').classList.add("small");
-                    document.getElementById('pageName').innerHTML = path;
+                    document.getElementById('buttonMenu').classList.add("flex");
                 } else {
                     document.getElementById('homeIcon').classList.remove("small");
-                    document.getElementById('pageName').innerHTML = "";
+                    document.getElementById('buttonMenu').classList.remove("flex");
                 }
             }
         </script>
     </head>
 
     <body style="bottom: 0px;">
-        <nav style="display:flex; text-align: center;">
-            <h1 style = "margin-top: 10px;" onclick="loadContent('/home');" id="homeIcon">\(\text{OHS}\sqrt{\frac{\text{Math}}{\text{Club}}}\)</h1>
-            <h1 style = "width: auto;" id="pageName"></h1>
-        </nav>
-        <nav style="margin-top: 10px;">
-            <a onclick="loadContent('/events');">Events</a>
-            <a onclick="loadContent('/tutoring');">Tutoring</a>
-            <a onclick="loadContent('/contact');">Contact</a>
-            <a onclick="loadContent('/join');">Join</a>
-        </nav>
+        <div id="navigation">
+            <nav style="display:flex; text-align: center;">
+                <h1 onclick="loadContent('home');" id="homeIcon">\(\text{OHS}\sqrt{\frac{\text{Math}}{\text{Club}}}\)</h1>
+            </nav>
+            <div style="transition-duration: 2s;" class="buttons"; id="buttonMenu";>
+                <a onclick="loadContent('Events');">Events</a>
+                <a onclick="loadContent('Tutoring');">Tutoring</a>
+                <a onclick="loadContent('Contact');">Contact</a>
+                <a onclick="loadContent('Join');">Join</a>
+            </div>
+        </div>
         <iframe style="position:static; width:100%; border-style:none; padding: 0px; min-height: 50vh;" src="/home" id="content"></iframe>
     </body>
 </html>
