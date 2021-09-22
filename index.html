@@ -54,7 +54,7 @@
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>
             function loadContent(path){
-                document.getElementById('content').src = "/ohsmathclub/" + toLowerCase(path);
+                document.getElementById('content').src = "/ohsmathclub/" + path.toLowerCase();
                 if(path != "home"){
                     document.getElementById('homeIcon').classList.add("small");
                     document.getElementById('buttonMenu').classList.add("flex");
