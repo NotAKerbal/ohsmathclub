@@ -2,14 +2,32 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 <style>
+    @keyframes fadeIn {
+        from{opacity:0%}
+        to{opacity:100%}
+    }
     body {
         font-family: 'Roboto', sans-serif;
+        animation-name: fadeIn;
+        animation-duration: 2s;
+        animation-delay: 2s;
+        opacity: 0%;
+        animation-fill-mode: forwards;
+        margin: 0px;
+        margin-top: 10px;
+    }
 
+    h2 {
+        background-color: blue;
+        color: yellow;
+        padding: 10px;
+        border-radius: 10px;
+        width: 180px;
     }
 </style>
 <h2>Competions</h2>
 <ls>
-    <li>Ex 1</li>
+    <li>9/30 @ 4:00 PM - Competition at Orem High School</li>
     <li>Ex 2</li>
 </ls>
 <h2>Lunch Meetings</h2>
